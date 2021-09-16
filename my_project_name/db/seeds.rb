@@ -7,7 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
+Artwork.destroy_all
+ArtworkShare.destroy_all
 
-User.create(name: 'Billy', email: "billy@bill.com")
-User.create(name: 'Daniel', email: "daniel@daniel.com")
-User.create(name: 'Sisco', email: "sisco@sisco.com")
+User.create(username: 'Billy')
+User.create(username: 'Daniel')
+User.create(username: 'Sisco')
+Artwork.create(title: 'monalisa', image_url: "idk.com", artist_id: 3)
