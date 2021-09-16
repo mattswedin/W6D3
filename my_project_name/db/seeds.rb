@@ -7,10 +7,15 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
+ApplicationRecord.connection.reset_pk_sequence!('users')
 Artwork.destroy_all
+ApplicationRecord.connection.reset_pk_sequence!('artworks')
 ArtworkShare.destroy_all
+ApplicationRecord.connection.reset_pk_sequence!('artworkshares')
 
-User.create(username: 'Billy')
-User.create(username: 'Daniel')
-User.create(username: 'Sisco')
-Artwork.create(title: 'monalisa', image_url: "idk.com", artist_id: 3)
+
+
+user1 = User.create(username: 'Billy')
+user2 = User.create(username: 'Daniel')
+user3 = User.create(username: 'Sisco')
+artwork1 = Artwork.create(title: 'monalisa', image_url: "idk.com", artist_id: user1.id)
