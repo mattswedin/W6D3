@@ -7,5 +7,9 @@ Rails.application.routes.draw do
   delete 'users/:id', to: 'users#destroy'
 
   # resources :users
-  resources :artworks, except: [:new, :edit]
+  resources :artworks, except: [:new, :index, :edit]
+  resources :artwork_shares, only: [:create, :destroy]
+  
+  get 'users/:user_id/:artworks', to: 'artworks#index'
+  
 end
